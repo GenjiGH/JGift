@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8e8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    transition: opacity 1s ease-in-out;
+}
+
+h1 {
+    font-size: 28px;
+    color: #6a0dad;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #6a0dad;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #9a4eb2;
+}
+
+/* Estilos de los corazones */
+.heart {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #c47fff;
+    transform: rotate(-45deg);
+    opacity: 0.8;
+    animation: float 5s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: #c47fff;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -12.5px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 12.5px;
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* Estilo de la tarjeta de regalo */
+.gift-card {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.gift-card img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+.gift-card h2 {
+    margin-top: 15px;
+    color: #6a0dad;
+}
+
+.gift-card p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Animación de la tarjeta */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
